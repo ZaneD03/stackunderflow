@@ -5,7 +5,6 @@
 import "../components/accountHeader.css";
 
 //UNIVERSAL
-let headerName = "Your Emergency Savings Account" //title
 let current = 121.30 //current amount in account
 let lastDeposit = "10/15/2026"
 let lastDepositAmount = 20
@@ -19,7 +18,7 @@ let remaining = goal - current
 let numItems = 12 //number of items in the wishlist
 
 
-function AccountHeader({isSave}){
+function AccountHeader({isSave,headerName}){
     return(
         <div>
         <div class="layout">
