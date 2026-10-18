@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import CreateAccount from './pages/CreateAccount';
 import ForgotPassword from './pages/ForgotPassword';
 import AccountsPage from './pages/Accounts';
+import BudgetPage from './pages/Budget';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/dashboard" element={<AppHeader />} />
           <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="/budget" element={<BudgetPage />} />
         </Routes>
       </BrowserRouter>
   );
