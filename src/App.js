@@ -1,5 +1,5 @@
 import './App.css';
-import AppHeader from './components/header';
+import FinancialSummary from './pages/FinancialSummary';
 import LandingPage from './pages/LandingPage';
 import CreateAccount from './pages/CreateAccount';
 import ForgotPassword from './pages/ForgotPassword';
@@ -17,6 +17,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="/financial-summary" element={<FinancialSummary />} />
           <Route path="/budget" element={<BudgetPage />} />
         </Routes>
       </BrowserRouter>

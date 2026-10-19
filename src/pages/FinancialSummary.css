@@ -1,0 +1,44 @@
+.summary-page { min-height: 100vh; background: #f4f7fb; color: #1b3049; }
+.summary-content { max-width: 1200px; margin: auto; padding: 44px 24px 64px; }
+.summary-heading, .summary-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.summary-eyebrow { color: #476a94; font-weight: 700; font-size: 11px; letter-spacing: .15em; margin-bottom: 10px; }
+.summary-heading h1 { font-size: clamp(28px, 4vw, 38px); font-weight: 700; letter-spacing: -.04em; }
+.summary-heading p:not(.summary-eyebrow), .summary-muted { color: #617188; font-size: 14px; }
+.summary-heading label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.summary-heading select { padding: 10px 32px 10px 12px; border: 1px solid #cbd5e2; border-radius: 8px; background: white; color: #1b3049; }
+.summary-demo { padding: 10px 14px; background: #e9eff8; color: #425d7c; border-radius: 8px; font-size: 12px; margin: 16px 0 24px; }
+.summary-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 24px; }
+.summary-stat, .summary-panel { background: white; border: 1px solid #e0e7ef; border-radius: 14px; padding: 24px; box-shadow: 0 3px 12px #19304b04; }
+.summary-stat h2 { font-size: 13px; color: #566981; margin-bottom: 16px; }
+.summary-stat strong { font-size: clamp(24px, 2.6vw, 32px); letter-spacing: -.04em; }
+.summary-stat p { color: #65758a; font-size: 11px; margin: 10px 0 0; }
+.summary-stat:first-child { background: #173e60; color: white; border-color: #173e60; }
+.summary-stat:first-child h2, .summary-stat:first-child p { color: #d4e3f0; }
+.summary-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.summary-section-heading h2 { font-size: 18px; font-weight: 650; margin: 0; }
+.summary-section-heading a, .summary-section-heading button { font-size: 12px; color: #315cbd; white-space: nowrap; }
+.summary-section-heading button { border: 0; background: transparent; padding: 6px 0; text-decoration: underline; }
+.summary-muted { margin: 10px 0 24px; }
+.summary-account { display: flex; align-items: center; gap: 12px; padding: 18px 0; border-bottom: 1px solid #edf0f5; }
+.summary-account-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #eef3fc; color: #315cbd; flex-shrink: 0; font-weight: 600; }
+.summary-account h3, .summary-goal h3 { font-size: 14px; margin: 0 0 4px; }
+.summary-account p, .summary-goal p { font-size: 12px; color: #617188; margin: 0; }
+.summary-account strong { margin-left: auto; font-size: 16px; }
+.summary-goal { padding-top: 24px; }
+.summary-goal span { font-size: 13px; }
+.summary-goal progress { width: 100%; height: 9px; accent-color: #43a393; margin: 10px 0; }
+.summary-category { margin: 22px 0; }
+.summary-category > div:first-child { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 9px; }
+.summary-category small { color: #617188; font-weight: 400; }
+.summary-bar { height: 8px; background: #edf1f6; border-radius: 8px; overflow: hidden; }
+.summary-bar span { display: block; height: 100%; border-radius: inherit; }
+.summary-table-wrap { overflow-x: auto; }
+.summary-transactions table { width: 100%; border-collapse: collapse; white-space: nowrap; font-size: 14px; }
+.summary-transactions th { background: #f7f9fc; color: #617188; font-size: 12px; font-weight: 500; }
+.summary-transactions th, .summary-transactions td { padding: 16px; border-bottom: 1px solid #edf0f5; }
+.summary-transactions th:last-child, .summary-transactions td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.summary-category-tag { background: #eef2f7; border-radius: 6px; padding: 5px 9px; font-size: 12px; }
+.summary-income { color: #217765; font-weight: 600; }
+.summary-empty { text-align: center; color: #617188; padding: 40px 16px; }
+@media (max-width: 900px) { .summary-stats { grid-template-columns: repeat(2, 1fr); } .summary-columns { grid-template-columns: 1fr; } }
+@media (max-width: 540px) { .summary-content { padding: 28px 16px; } .summary-heading { align-items: flex-start; flex-direction: column; } .summary-stats { gap: 10px; } .summary-stat, .summary-panel { padding: 16px; } .summary-section-heading { flex-wrap: wrap; } .summary-account { flex-wrap: wrap; } .summary-stat strong { font-size: 24px; } }
