@@ -16,7 +16,7 @@ import AccountHeader from '../components/accountHeader';
 import AccountNode from '../components/accountNode';
 
 //Temp values for prototype
-let accountProgress = 0 //How far a users account has progressed
+let accountProgress = 2 //How far a users account has progressed
 let numAccounts = 0; //Number of non-emergency savings accounts and wishlists (0=only E savings)
 let eSavingsName = "Your Emergency Savings Account" //title
 
@@ -52,17 +52,34 @@ function AccountsPage() {
     }else if(accountProgress == 1){ // (1=E savings but goal has not been reached) 
         return (
             <div>
-                <AppHeader />
-                <AccountHeader isSave = {true} headerName = {eSavingsName}/>
+                <Container>
+                    <AppHeader />
+                    <AccountHeader isSave = {true} headerName = {eSavingsName}/>      
+                </Container>
             </div>
         );
     }else if(accountProgress == 2){ // (2=E savings goal has been reached) 
         return (
             <div>
-                <AppHeader />
-                <AccountHeader isSave = {true} headerName = {eSavingsName}/>
-                <AccountNode isSave = {isSave1} nodeName = {nodeName1}/>
-                <AccountNode isSave = {isSave2} nodeName = {nodeName2}/>
+                <Container>
+                    <AppHeader />
+                    <Row>
+                        <Col>
+                            <AccountHeader isSave = {true} headerName = {eSavingsName}/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={2}>  
+                        </Col>
+                        <Col md={3}>
+                            <AccountNode isSave = {isSave1} nodeName = {nodeName1}/>    
+                        </Col>
+                        <Col md={3}>
+                            <AccountNode isSave = {isSave2} nodeName = {nodeName2}/>
+                        </Col>
+                    </Row>
+
+                </Container>
             </div>
         );
     };
