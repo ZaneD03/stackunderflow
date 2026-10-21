@@ -42,3 +42,21 @@
 .summary-empty { text-align: center; color: #617188; padding: 40px 16px; }
 @media (max-width: 900px) { .summary-stats { grid-template-columns: repeat(2, 1fr); } .summary-columns { grid-template-columns: 1fr; } }
 @media (max-width: 540px) { .summary-content { padding: 28px 16px; } .summary-heading { align-items: flex-start; flex-direction: column; } .summary-stats { gap: 10px; } .summary-stat, .summary-panel { padding: 16px; } .summary-section-heading { flex-wrap: wrap; } .summary-account { flex-wrap: wrap; } .summary-stat strong { font-size: 24px; } }
+
+.summary-transactions { margin-top: 24px; }
+.summary-transactions th:nth-last-child(2), .summary-transactions td:nth-last-child(2) { text-align: right; font-variant-numeric: tabular-nums; }
+.summary-transactions td:nth-child(2) { white-space: normal; min-width: 240px; }
+.summary-chat-widget { position: fixed; right: 24px; bottom: 24px; z-index: 1040; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.summary-chat-toggle { display: grid; place-items: center; width: 56px; height: 56px; border: 0; border-radius: 50%; background: #173e60; color: white; box-shadow: 0 6px 22px #173e6033; }
+.summary-chat-toggle:hover { background: #24577e; }
+.summary-chat-widget button:focus-visible { outline: 3px solid #658de2; outline-offset: 3px; }
+.summary-chat-window { width: min(340px, calc(100vw - 32px)); max-height: calc(100dvh - 112px); overflow-y: auto; background: white; border: 1px solid #e0e7ef; border-radius: 16px; box-shadow: 0 12px 40px #173e6026; }
+.summary-chat-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid #edf0f5; }
+.summary-chat-header h2 { font-size: 16px; margin: 0; }
+.summary-chat-header button { border: 0; background: transparent; color: #617188; font-size: 24px; width: 32px; height: 32px; }
+.summary-chat-body { min-height: 160px; padding: 24px 18px; font-size: 14px; color: #617188; }
+.summary-chat-greeting { color: #1b3049; font-weight: 600; }
+.summary-chat-composer { display: flex; gap: 8px; margin: 0 14px 14px; padding: 8px; border: 1px solid #dce3ee; border-radius: 10px; background: #f8fafc; }
+.summary-chat-composer input { width: 100%; min-width: 0; border: 0; background: transparent; padding: 6px; font-size: 14px; }
+.summary-chat-composer button { border: 0; border-radius: 8px; background: #e0e6f2; color: #60728d; padding: 6px 12px; }
+@media (max-width: 540px) { .summary-chat-widget { right: 16px; bottom: 16px; } }
