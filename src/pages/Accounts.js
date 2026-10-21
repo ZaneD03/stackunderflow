@@ -8,12 +8,15 @@
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import AppHeader from '../components/header';
 import AccountHeader from '../components/accountHeader';
 import AccountNode from '../components/accountNode';
 
 //Temp values for prototype
-let accountProgress = 2 //How far a users account has progressed
+let accountProgress = 0 //How far a users account has progressed
 let numAccounts = 0; //Number of non-emergency savings accounts and wishlists (0=only E savings)
 let eSavingsName = "Your Emergency Savings Account" //title
 
@@ -25,15 +28,26 @@ let nodeName2 = "Garage Wishlist";
 function AccountsPage() {
     if(accountProgress == 0){ //(0=no E savings initialized)
         return (
-            <div>
+            <Container>
                 <AppHeader />
-                <header>
-                NO ACCOUNTS TO VIEW
-                </header>
-                <header>
-                Go to Budget to initialize setup {/*TODO Create a link from here to Budget Page*/}
-                </header>
-            </div>
+                <Row className="justify-content-center">
+                    <Col md={4} className="bg-light p-3">
+                        <h2 className ="text-center">NO ACCOUNTS TO VIEW</h2>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center" >
+                    <Col md={4} className="bg-light p-3">
+                        <h2 className ="text-center">Go to Budget to initialize setup</h2>
+                    </Col>
+                </Row>
+
+                <Row className="justify-content-center" >
+                    <Col md={4} className="bg-light p-3 d-flex justify-content-center align-items-center">
+                        <Button variant="primary">Start Budget</Button>
+                    </Col>
+                </Row>
+
+            </Container>
         );
     }else if(accountProgress == 1){ // (1=E savings but goal has not been reached) 
         return (
