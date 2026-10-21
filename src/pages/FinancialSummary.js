@@ -27,7 +27,7 @@ export default function FinancialSummary() {
       <AppHeader />
       <main className="summary-content">
         <header className="summary-heading">
-          <div><p className="summary-eyebrow">YOUR FINANCIAL PICTURE</p><h1>Account Summary</h1><p>Review your transactions by month.</p></div>
+          <div><h1>Account Summary</h1><p>Review your transactions by month.</p></div>
           <div><label htmlFor="summary-month">Activity month</label><select id="summary-month" value={month} onChange={(event) => { setMonth(event.target.value); setShowAll(false); }}>
             <option value="2026-10">October 2026</option><option value="2026-09">September 2026</option><option value="2026-08">August 2026</option>
           </select></div>

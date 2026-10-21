@@ -114,7 +114,7 @@ function Dashboard(){
                 <Col md={4}>
                     <Card style={{ width: '25rem',height: '20rem' }}>
                     <Card.Body>
-                        <Card.Title>Table 1</Card.Title>
+                        <Card.Title>Table 1 -Some E savings Data</Card.Title>
                         <Card.Text>TABLE GOES HERE -TODO</Card.Text>
                     </Card.Body>
                     </Card>
@@ -124,7 +124,7 @@ function Dashboard(){
                     <Card style={{ width: '50rem',height: '20rem' }}>
                         <Card.Body>
                             <Card.Title>Budget Breakdown</Card.Title>
-                            <Card.Text>TABLE GOES HERE -TODO</Card.Text>
+                            <Card.Text>TABLE GOES HERE -TODO Pie chart of expenses from Budget page</Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -212,7 +212,7 @@ function Dashboard(){
                 <Col md={4}>
                     <Card style={{ width: '25rem',height: '20rem' }}>
                     <Card.Body>
-                        <Card.Title>Table 1</Card.Title>
+                        <Card.Title>Table 1 -Some E savings Data</Card.Title>
                         <Card.Text>TABLE GOES HERE -TODO</Card.Text>
                     </Card.Body>
                     </Card>
@@ -221,7 +221,7 @@ function Dashboard(){
                 <Col md={4}>
                     <Card style={{ width: '25rem',height: '20rem' }}>
                     <Card.Body>
-                        <Card.Title>Table 2</Card.Title>
+                        <Card.Title>Table 2 -Some Savings/Wishlist Data</Card.Title>
                         <Card.Text>TABLE GOES HERE -TODO</Card.Text>
                     </Card.Body>
                     </Card>
@@ -232,7 +232,7 @@ function Dashboard(){
                 <Card style={{ width: '50rem',height: '20rem' }}>
                     <Card.Body>
                         <Card.Title>Budget Breakdown</Card.Title>
-                        <Card.Text>TABLE GOES HERE -TODO</Card.Text>
+                        <Card.Text>TABLE GOES HERE -TODO Pie chart of expenses from Budget page</Card.Text>
                     </Card.Body>
                 </Card>
             </Row>
