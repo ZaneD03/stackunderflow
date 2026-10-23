@@ -6,20 +6,20 @@ const money = (amount) => new Intl.NumberFormat('en-US', { style: 'currency', cu
 // Frontend examples. Descriptions represent notes entered when recording activity.
 // Purchase events use an item name; connect these records to account activity later.
 const activity = [
-  { id: 1, date: '2026-09-01', account: 'Emergency fund', description: 'Added part of my paycheck for unexpected expenses', amount: 200 },
-  { id: 2, date: '2026-09-03', account: 'Wishlist', description: 'Saving for a new desk setup', amount: 150 },
-  { id: 3, date: '2026-09-10', account: 'Garage', description: 'Added money for garage tools', amount: 100 },
-  { id: 4, date: '2026-09-17', account: 'Emergency fund', description: 'Monthly emergency fund contribution', amount: 100 },
-  { id: 5, date: '2026-10-01', account: 'Wishlist', description: 'Added birthday money to my wishlist', amount: 75 },
-  { id: 6, date: '2026-10-03', account: 'Emergency fund', description: 'Emergency fund added — payday contribution', amount: 200 },
-  { id: 7, date: '2026-10-08', account: 'Garage', type: 'purchase', itemName: 'Socket set', amount: -45 },
-  { id: 8, date: '2026-10-12', account: 'Wishlist', type: 'purchase', itemName: 'Desk lamp', amount: -35 },
-  { id: 9, date: '2026-10-15', account: 'Emergency fund', description: 'Used emergency savings for a car repair', amount: -120 },
-  { id: 10, date: '2026-10-17', account: 'Garage', description: 'Added money for the next garage project', amount: 80 },
-  { id: 11, date: '2026-10-18', account: 'Wishlist', type: 'purchase', itemName: 'Office chair', amount: -125 },
+  { id: 1, date: '2026-09-01', account: 'Emergency Fund', description: 'Added part of my paycheck for unexpected expenses', amount: 200 },
+  { id: 2, date: '2026-09-03', account: 'Christmas Savings', description: 'Saving for Christmas gifts', amount: 150 },
+  { id: 3, date: '2026-09-10', account: 'Garage Wishlists', description: 'Added money for garage tools', amount: 100 },
+  { id: 4, date: '2026-09-17', account: 'Emergency Fund', description: 'Monthly emergency fund contribution', amount: 100 },
+  { id: 5, date: '2026-10-01', account: 'Christmas Savings', description: 'Added money for Christmas shopping', amount: 75 },
+  { id: 6, date: '2026-10-03', account: 'Emergency Fund', description: 'Emergency fund added — payday contribution', amount: 200 },
+  { id: 7, date: '2026-10-08', account: 'Garage Wishlists', type: 'purchase', itemName: 'Socket set', amount: -45 },
+  { id: 8, date: '2026-10-12', account: 'Christmas Savings', type: 'purchase', itemName: 'Desk lamp', amount: -35 },
+  { id: 9, date: '2026-10-15', account: 'Emergency Fund', description: 'Used emergency savings for a car repair', amount: -120 },
+  { id: 10, date: '2026-10-17', account: 'Garage Wishlists', description: 'Added money for the next garage project', amount: 80 },
+  { id: 11, date: '2026-10-18', account: 'Christmas Savings', type: 'purchase', itemName: 'Office chair', amount: -125 },
 ];
 // Calculate each account's balance in chronological order before filtering by month.
-const balances = { Wishlist: 100, Garage: 150, 'Emergency fund': 500 };
+const balances = { 'Christmas Savings': 100, 'Garage Wishlists': 150, 'Emergency Fund': 500 };
 const transactions = activity.map((item) => {
   balances[item.account] += item.amount;
   return {
