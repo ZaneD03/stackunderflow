@@ -1,0 +1,155 @@
+/* Dashboard.css */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: #f7f8fc;
+  color: #202b3c;
+}
+
+.dashboard-heading {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+
+.dashboard-card {
+  border: 1px solid #e6eaf0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(31, 41, 55, 0.035);
+  transition: box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 6px 18px rgba(31, 41, 55, 0.07);
+}
+
+.summary-card .card-body {
+  padding: 22px;
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.summary-value {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+
+.income-value {
+  color: #16845b;
+}
+
+.expense-value {
+  color: #d45151;
+}
+
+.savings-progress {
+  height: 8px;
+  border-radius: 10px;
+  background-color: #edf0f5;
+}
+
+.savings-progress .progress-bar {
+  border-radius: 10px;
+}
+
+.status-badge {
+  padding: 6px 10px;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.section-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.account-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.dashboard-table {
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+.dashboard-table th {
+  color: #64748b;
+  font-weight: 600;
+  background-color: transparent !important;
+  border-bottom: 2px solid #edf0f5;
+  white-space: nowrap;
+}
+
+.dashboard-table td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f3f9;
+}
+.dashboard-button {
+  background-color: #2764e7;
+  border: 1px solid #2764e7;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.dashboard-button:hover {
+  background-color: transparent;
+  border-color: #2764e7;
+  color: #2764e7;
+}
+
+.dashboard-button:active {
+  background-color: transparent !important;
+  border-color: #2764e7 !important;
+  color: #2764e7 !important;
+}
+.welcome-card {
+  border: none;
+}
+
+.welcome-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 22px;
+  border-radius: 18px;
+  background: #e9efff;
+  color: #2764e7;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.welcome-description {
+  max-width: 480px;
+  line-height: 1.7;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 576px) {
+  .dashboard-page {
+    padding: 15px !important;
+  }
+
+  .summary-card .card-body {
+    padding: 17px;
+  }
+}
