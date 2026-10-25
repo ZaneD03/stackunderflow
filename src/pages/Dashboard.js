@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Badge from 'react-bootstrap/Badge';
 import Table from 'react-bootstrap/Table';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { useState } from 'react';
 import {
   ResponsiveContainer,
@@ -25,7 +26,6 @@ import {
 
 import './Dashboard.css';
 
-let accountProgress = 2; // Set to 2 to show the full dashboard state
 let userName = "Zane";
 
 // Sample Data for Budget Pie Chart
@@ -39,11 +39,11 @@ const budgetData = [
 
 const COLORS = ['#2764e7', '#16845b', '#f59e0b', '#8b5cf6', '#d45151'];
 
-// Sample Data for Monthly Savings Progress
+// Sample Data for Monthly Savings Bar Chart
 const monthlySavingsData = [
   { month: 'Jun', savings: 200 },
   { month: 'Jul', savings: 450 },
-  { month: 'Aug', savings: 300 },
+  { month: 'Aug', savings: 600 },
   { month: 'Sep', savings: 850 },
   { month: 'Oct', savings: 1000 },
 ];
@@ -65,10 +65,49 @@ const wishlistActivityData = [
 ];
 
 function Dashboard(){
+    // Changed to useState so you can toggle states live in your demo presentation!
+    const [accountProgress, setAccountProgress] = useState(2);
+
+    // Reusable Demo Controls Toolbar to place at the top of any view
+    const renderDemoToolbar = () => (
+      <Row className="mb-4">
+        <Col md={12}>
+          <div className="demo-control-bar p-3 bg-white rounded-3 shadow-sm border d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <span className="badge bg-secondary me-2">DEMO MODE</span>
+              <span className="fw-bold small text-muted">Switch Account View:</span>
+            </div>
+            <ButtonGroup size="sm">
+              <Button 
+                variant={accountProgress === 0 ? "primary" : "outline-primary"}
+                onClick={() => setAccountProgress(0)}
+              >
+               New Account
+              </Button>
+              <Button 
+                variant={accountProgress === 1 ? "primary" : "outline-primary"}
+                onClick={() => setAccountProgress(1)}
+              >
+                Goal In Progress
+              </Button>
+              <Button 
+                variant={accountProgress === 2 ? "primary" : "outline-primary"}
+                onClick={() => setAccountProgress(2)}
+              >
+                Full Dashboard
+              </Button>
+            </ButtonGroup>
+          </div>
+        </Col>
+      </Row>
+    );
+
     if(accountProgress == 0){
         return(
             <Container className="dashboard-page py-4">
             <AppHeader />
+            {renderDemoToolbar()}
+            
             <Row className="goodmorning mb-3">
                 <Col md={3}>
                     <h2 className="dashboard-heading">Good morning, {userName}</h2>
@@ -83,7 +122,7 @@ function Dashboard(){
                         <p className="text-muted welcome-description mx-auto">
                           You are all set up. Let's get your budget configured to start tracking your savings and financial goals.
                         </p>
-                        <Button variant="primary" size="lg" className="dashboard-button">Setup Here</Button>
+                        <Button variant="primary" size="lg">Setup Here</Button>
                     </Card>
                 </Col>
             </Row>
@@ -94,18 +133,21 @@ function Dashboard(){
         return(
         <Container fluid className="dashboard-page px-4 py-4">
             <AppHeader />
+            {renderDemoToolbar()}
+
             <Row className="goodmorning mb-4">
                 <Col md={6}>
                     <h2 className="dashboard-heading">Good morning, {userName}</h2>
                     <h5 className="text-muted">Welcome to your dashboard!</h5>
                 </Col>
             </Row> 
+
             <Row className="Summary Row g-4 mb-4">
                 <Col md={3}>
                     <Card className="dashboard-card summary-card h-100">
                     <Card.Body>
                         <Card.Text className="summary-label">
-                            Current Balance - Emergency Savings
+                            Emergency Savings
                         </Card.Text>
                         <Card.Title className="summary-value">$118.18<span className="text-muted fs-6">/1000</span></Card.Title>
                         <ProgressBar now={11.8} className="savings-progress my-3" />
@@ -118,11 +160,11 @@ function Dashboard(){
                     <Card className="dashboard-card summary-card h-100">
                     <Card.Body>
                         <Card.Text className="summary-label">
-                            Last Transaction
+                            Current Balance
                         </Card.Text>
                         <Card.Title className="summary-value">$18.18</Card.Title>
-                        <Card.Text className="text-muted small mb-3">Deposit into Emergency Savings</Card.Text>
-                        <Button variant="outline-primary" size="sm">See this transaction</Button>
+                        <Card.Text className="text-muted small mb-3">Total Balance From All Accounts</Card.Text>
+                        <Button variant="outline-primary" size="sm">See All Accounts</Button>
                     </Card.Body>
                     </Card>
                 </Col>
@@ -152,7 +194,7 @@ function Dashboard(){
                 </Col>
             </Row>  
 
-            <Row className="g-4">
+            <Row className="g-4 mb-4">
                 <Col lg={5} md={12}>
                     <Card className="dashboard-card h-100">
                     <Card.Body>
@@ -183,7 +225,7 @@ function Dashboard(){
                     <Card className="dashboard-card h-100">
                         <Card.Body>
                             <Card.Title className="section-heading">Budget Breakdown</Card.Title>
-                            <div style={{ width: '100%', height: '320px' }}>
+                            <div style={{ width: '100%', height: '360px' }}>
                               <ResponsiveContainer>
                                 <PieChart>
                                   <Pie
@@ -217,6 +259,8 @@ function Dashboard(){
         return(
             <Container fluid className="dashboard-page px-4 py-4">
             <AppHeader />
+            {renderDemoToolbar()}
+
             <Row className="goodmorning mb-4">
                 <Col md={6}>
                     <h2 className="dashboard-heading">Good morning, {userName}</h2>
@@ -230,7 +274,7 @@ function Dashboard(){
                     <Card className="dashboard-card summary-card h-100">
                     <Card.Body>
                         <Card.Text className="summary-label">
-                            Current Balance - Emergency Savings
+                            Emergency Savings
                         </Card.Text>
                         <Card.Title className="summary-value">$1000<span className="text-muted fs-6">/1000</span></Card.Title>
                         <ProgressBar now={100} variant="success" className="savings-progress my-2" />
@@ -246,11 +290,11 @@ function Dashboard(){
                     <Card className="dashboard-card summary-card h-100">
                     <Card.Body>
                         <Card.Text className="summary-label">
-                            Last Transaction
+                            Current Balance
                         </Card.Text>
                         <Card.Title className="summary-value">$18.18</Card.Title>
-                        <Card.Text className="text-muted small mb-4">Deposit into Emergency Savings</Card.Text>
-                        <Button variant="outline-primary" size="sm">See this transaction</Button>
+                        <Card.Text className="text-muted small mb-4">Total Balance From All Accounts</Card.Text>
+                        <Button variant="outline-primary" size="sm">See All Accounts</Button>
                     </Card.Body>
                     </Card>
                 </Col>
@@ -339,7 +383,7 @@ function Dashboard(){
                 <Col xl={4} md={6}>
                     <Card className="dashboard-card h-100">
                     <Card.Body>
-                        <Card.Title className="section-heading">Table 2 - Wishlist & Deposits Activity</Card.Title>
+                        <Card.Title className="section-heading">Table 2 - Wishlist & Savings</Card.Title>
                         <Table responsive hover className="dashboard-table mt-2">
                           <thead>
                             <tr>
@@ -363,14 +407,14 @@ function Dashboard(){
                 </Col>
             </Row>
 
-            {/* Bottom Row: Charts Section (Budget Pie Chart & Savings Bar Chart) */}
+            {/* Bottom Row: Budget Pie Chart & Monthly Savings Bar Chart */}
             <Row className="g-4">
                 <Col lg={6} md={12}>
                     <Card className="dashboard-card h-100">
                         <Card.Body>
                             <Card.Title className="section-heading">Budget Breakdown</Card.Title>
                             <p className="text-muted small mb-3">Overview of monthly expenses categorized from your budget page.</p>
-                            <div style={{ width: '100%', height: '280px' }}>
+                            <div style={{ width: '100%', height: '380px' }}>
                               <ResponsiveContainer>
                                 <PieChart>
                                   <Pie
@@ -379,7 +423,7 @@ function Dashboard(){
                                     cy="50%"
                                     innerRadius={60}
                                     outerRadius={95}
-                                    paddingAngle={5}
+                                    paddingAngle={1}
                                     dataKey="value"
                                     label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
                                   >
@@ -400,7 +444,7 @@ function Dashboard(){
                     <Card className="dashboard-card h-100">
                         <Card.Body>
                             <Card.Title className="section-heading">Monthly Savings Progress</Card.Title>
-                            <p className="text-muted small mb-3">Track how your total savings grew over the past few months.</p>
+                            <p className="text-muted small mb-3">Track how your total savings grew over recent months.</p>
                             <div style={{ width: '100%', height: '280px' }}>
                               <ResponsiveContainer>
                                 <BarChart data={monthlySavingsData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
