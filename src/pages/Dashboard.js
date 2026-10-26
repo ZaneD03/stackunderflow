@@ -66,7 +66,7 @@ const wishlistActivityData = [
 
 function Dashboard(){
     // Changed to useState so you can toggle states live in your demo presentation!
-    const [accountProgress, setAccountProgress] = useState(2);
+    const [accountProgress, setAccountProgress] = useState(0);
 
     // Reusable Demo Controls Toolbar to place at the top of any view
     const renderDemoToolbar = () => (
@@ -107,12 +107,7 @@ function Dashboard(){
             <Container className="dashboard-page py-4">
             <AppHeader />
             {renderDemoToolbar()}
-            
-            <Row className="goodmorning mb-3">
-                <Col md={3}>
-                    <h2 className="dashboard-heading">Good morning, {userName}</h2>
-                </Col>
-            </Row>  
+             
 
             <Row className="welcome justify-content-center my-5">
                 <Col md={6} className="text-center">

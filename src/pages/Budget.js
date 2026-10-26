@@ -99,8 +99,7 @@ function BudgetPage() {
                             <h2>Manage Your Budget</h2>
 
                             <p className="mt-4">
-                                You have not submitted your income/expense.
-                                Click below to report this information.
+                                Click below to report your income/expense information.
                             </p>
 
                             <Button
