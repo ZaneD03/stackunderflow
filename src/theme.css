@@ -1,0 +1,32 @@
+.simple-page { min-height: 100vh; background: var(--bs-tertiary-bg); color: var(--bs-body-color); }
+.simple-content { max-width: 800px; padding: 40px 24px 64px; margin: auto; }
+.simple-content h1 { font-size: 32px; font-weight: 700; }
+.simple-card { border-radius: 14px; }
+.simple-card .card-body { padding: 24px; }
+.profile-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.profile-avatar { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--bs-primary-bg-subtle); color: var(--bs-primary-text-emphasis); font-size: 24px; }
+.theme-options { display: flex; flex-wrap: wrap; gap: 16px; }
+.theme-option { display: block; width: 200px; padding: 16px; border: 2px solid var(--bs-border-color); border-radius: 12px; cursor: pointer; }
+.theme-option.selected { border-color: var(--bs-primary); }
+.theme-swatch { display: flex; flex-direction: column; gap: 8px; padding: 14px; height: 90px; border-radius: 6px; margin-bottom: 12px; }
+.theme-swatch-light { background: #f4f7fb; }
+.theme-swatch-dark { background: #182332; }
+.theme-swatch span { display: block; height: 10px; width: 80%; background: #c6d7f0; border-radius: 3px; }
+.theme-swatch-dark span { background: #425875; }
+.notifications-dropdown .dropdown-menu { width: 300px; max-width: calc(100vw - 32px); border-radius: 12px; }
+.notifications-empty { padding: 20px 24px 28px; text-align: center; }
+.notifications-empty > span { display: block; font-size: 24px; color: var(--bs-success-text-emphasis); margin-bottom: 8px; }
+/* Bootstrap handles standard components; these cover existing custom page styles. */
+[data-bs-theme="dark"] .bg-white, [data-bs-theme="dark"] .bg-light { background-color: #202c3c !important; color: #e2e8f0; }
+[data-bs-theme="dark"] .dashboard-page, [data-bs-theme="dark"] .summary-page, [data-bs-theme="dark"] .login-page { background: #152131; color: #e2e8f0; }
+[data-bs-theme="dark"] .dashboard-card, [data-bs-theme="dark"] .summary-panel, [data-bs-theme="dark"] .summary-stat, [data-bs-theme="dark"] .summary-chat-window { background: #202c3c; border-color: #405066; color: #e2e8f0; }
+[data-bs-theme="dark"] .summary-heading select, [data-bs-theme="dark"] .summary-chat-composer { background: #202c3c; color: #e2e8f0; border-color: #405066; }
+[data-bs-theme="dark"] .summary-chat-composer input { color: #e2e8f0; }
+[data-bs-theme="dark"] .summary-category-tag, [data-bs-theme="dark"] .summary-transactions th { background: #29394e; color: #d0dced; }
+[data-bs-theme="dark"] .section-heading, [data-bs-theme="dark"] .login-form-container h2, [data-bs-theme="dark"] .login-form-container .form-label, [data-bs-theme="dark"] .summary-chat-greeting { color: #e2e8f0; }
+[data-bs-theme="dark"] .summary-muted, [data-bs-theme="dark"] .summary-heading p, [data-bs-theme="dark"] .summary-empty, [data-bs-theme="dark"] .summary-chat-body, [data-bs-theme="dark"] .summary-chat-header button, [data-bs-theme="dark"] .summary-label, [data-bs-theme="dark"] .login-prototype-note { color: #b1c0d2; }
+[data-bs-theme="dark"] .summary-transactions td, [data-bs-theme="dark"] .summary-transactions th, [data-bs-theme="dark"] .summary-chat-header, [data-bs-theme="dark"] .account-item { border-color: #405066; }
+[data-bs-theme="dark"] .summary-section-heading button, [data-bs-theme="dark"] .summary-section-heading a { color: #9dbdff; }
+[data-bs-theme="dark"] .summary-income, [data-bs-theme="dark"] .income-value { color: #81d8b2; }
+[data-bs-theme="dark"] .expense-value { color: #ffabab; }
+@media(max-width: 540px) { .simple-content { padding: 28px 16px; } .theme-option { flex: 1; min-width: 120px; } }

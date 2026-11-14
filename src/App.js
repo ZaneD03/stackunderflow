@@ -1,3 +1,8 @@
+import { ThemeProvider } from './context/ThemeContext';
+import Settings from './pages/Settings';
+import MyAccount from './pages/MyAccount';
+import ContactUs from './pages/ContactUs';
+import './theme.css';
 import './App.css';
 import FinancialSummary from './pages/FinancialSummary';
 import LandingPage from './pages/LandingPage';
@@ -10,8 +15,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
+    <ThemeProvider><BrowserRouter>
         <Routes>
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/my-account" element={<MyAccount />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -20,7 +28,7 @@ function App() {
           <Route path="/financial-summary" element={<FinancialSummary />} />
           <Route path="/budget" element={<BudgetPage />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter></ThemeProvider>
   );
 }
 

@@ -22,7 +22,10 @@ export default function AppHeader() {
             <Nav.Link as={NavLink} to="/financial-summary">Financial Summary</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link as={NavLink} to="/notifications">Notifications</Nav.Link>
+            <NavDropdown title="Notifications" id="notifications-dropdown" align="end" className="notifications-dropdown">
+              <NavDropdown.Header>Notifications</NavDropdown.Header>
+              <div className="notifications-empty"><span aria-hidden="true">✓</span><p className="fw-semibold mb-1">You’re all caught up</p><p className="small text-body-secondary mb-0">No new notifications.</p></div>
+            </NavDropdown>
             <NavDropdown title="Account" id="basic-nav-dropdown">
               {/* Used as={Link} inside dropdowns to prevent style clashing */}
               <NavDropdown.Item as={Link} to="/my-account">My Account</NavDropdown.Item>
