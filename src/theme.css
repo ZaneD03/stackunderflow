@@ -30,3 +30,62 @@
 [data-bs-theme="dark"] .summary-income, [data-bs-theme="dark"] .income-value { color: #81d8b2; }
 [data-bs-theme="dark"] .expense-value { color: #ffabab; }
 @media(max-width: 540px) { .simple-content { padding: 28px 16px; } .theme-option { flex: 1; min-width: 120px; } }
+
+/* Cosmetic alignment with Financial Summary. No layout or sizing overrides.
+   Exclude the reference page so its existing appearance stays unchanged. */
+body:not(:has(.summary-page)) {
+  --fm-text: #1b3049;
+  --fm-muted: #617188;
+  --fm-background: #f4f7fb;
+  --fm-surface: #ffffff;
+  --fm-border: #e0e7ef;
+  --fm-primary: #315cbd;
+  --bs-body-color: var(--fm-text);
+  --bs-secondary-color: var(--fm-muted);
+  --bs-border-color: var(--fm-border);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--fm-background);
+  color: var(--fm-text);
+}
+[data-bs-theme="dark"] body:not(:has(.summary-page)) {
+  --fm-text: #e2e8f0;
+  --fm-muted: #b1c0d2;
+  --fm-background: #152131;
+  --fm-surface: #202c3c;
+  --fm-border: #405066;
+}
+body:not(:has(.summary-page)) :is(.dashboard-page, .simple-page) {
+  background-color: var(--fm-background);
+  color: var(--fm-text);
+}
+body:not(:has(.summary-page)) :is(.card, .dashboard-card) {
+  --bs-card-color: var(--fm-text);
+  background-color: var(--fm-surface);
+  border-color: var(--fm-border);
+}
+body:not(:has(.summary-page)) :is(.section-heading, .card-title):not(.income-value):not(.expense-value) { color: var(--fm-text); }
+body:not(:has(.summary-page)) :is(.summary-label, .dashboard-table th) { color: var(--fm-muted); }
+body:not(:has(.summary-page)) :is(.dashboard-table th, .dashboard-table td, .account-item) { border-color: var(--fm-border); }
+body:not(:has(.summary-page)) .btn-primary {
+  --bs-btn-bg: var(--fm-primary);
+  --bs-btn-border-color: var(--fm-primary);
+  --bs-btn-hover-bg: #264a99;
+  --bs-btn-hover-border-color: #264a99;
+  --bs-btn-active-bg: #264a99;
+  --bs-btn-active-border-color: #264a99;
+  --bs-btn-disabled-bg: var(--fm-primary);
+  --bs-btn-disabled-border-color: var(--fm-primary);
+}
+body:not(:has(.summary-page)) .btn-outline-primary {
+  --bs-btn-color: var(--fm-primary);
+  --bs-btn-border-color: var(--fm-primary);
+  --bs-btn-hover-bg: var(--fm-primary);
+  --bs-btn-hover-border-color: var(--fm-primary);
+  --bs-btn-active-bg: var(--fm-primary);
+  --bs-btn-active-border-color: var(--fm-primary);
+}
+[data-bs-theme="dark"] body:not(:has(.summary-page)) .btn-outline-primary {
+  --bs-btn-color: #9dbdff;
+  --bs-btn-border-color: #9dbdff;
+}
