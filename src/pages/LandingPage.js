@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -8,6 +8,13 @@ import './LandingPage.css';
 export default function LandingPage() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const [getData, setData] = useState([]);
+  const data = useEffect(() => { async function test() {
+    let j = await fetch("http://localhost:5248/api/database-tables");
+    setData(await j.text());
+  }
+  test();
+});
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -22,7 +29,7 @@ export default function LandingPage() {
           Financial Management
         </div>
         <div className="login-intro-content">
-          <p className="login-eyebrow">YOUR MONEY. YOUR NEXT CHAPTER.</p>
+          <p className="login-eyebrow">YOUR MONEY. YOUR NEXT CHAPTER.{getData}</p>
           <h1 id="login-intro-title">A clearer view of your finances.</h1>
           <p>Bring your accounts, budgets, and financial goals together in one place.</p>
           <ul className="login-benefits">
